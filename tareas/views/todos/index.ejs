@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Express - Tareas</title>
 </head>
 <body>
     <h1>Tareas</h1>
     <ul>
-        <% todos.feoreach(function(t) { %>
+        <% todos.forEach(function(t) { %>
             <li>
                 <%= t.todo %>
                 -
