@@ -10,9 +10,9 @@
 <body>
     <h1>Tareas</h1>
     <ul>
-        <% todos.forEach(function(t) { %>
+        <% todos.forEach(function(t, idx) { %>
             <li>
-                <%= t.todo %>
+                <a href="/todos/<%= idx %>"><%= t.todo %></a>
                 -
                 <%= t.done ? 'hecho' : 'pendiente' %>
             </li>
