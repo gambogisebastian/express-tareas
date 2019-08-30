@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method')); // toma la acción POST del http y la convierte en lo que viene con ?
 //-------------------------------------------------------------
 app.use('/', indexRouter);
 app.use('/todos', todosRouter);

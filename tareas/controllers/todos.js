@@ -5,7 +5,9 @@ module.exports = {
     show,
     new: newTarea,
     create,
-    delete: deleteTarea
+    delete: deleteTarea,
+    edit,
+    update
 };
 
 function index (req, res) {
@@ -37,3 +39,16 @@ function deleteTarea (req, res) {
   Todo.deleteOne(req.params.id);
   res.redirect('/todos');
 };
+
+function edit (req, res) {
+  var todo = Todo.getOne(req.params.id)
+  res.render('todos/edit', {
+    todo,
+    todoIdx: req.params.id
+  });
+};
+
+function update (req, res) {
+  Todo.update(req.params.id, req.body);
+  res.redirect('todos/index');
+}
