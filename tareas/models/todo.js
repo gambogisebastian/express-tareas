@@ -6,7 +6,12 @@ const todos = [
 
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create
+};
+
+function create (todo) {
+    todos.push(todo);
 };
 
 function getAll() {

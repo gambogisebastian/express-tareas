@@ -3,11 +3,15 @@ var Todo = require('../models/todo');
 module.exports = {
     index,
     show,
-    new: newTarea
+    new: newTarea,
+    create
 };
 
-function newTarea(req, res) {
-  res.render('todos/new');
+function create (req, res) {
+  console.log(req.body);
+  req.body.done = false;
+  Todo.create(req.body);
+  res.redirect('/todos');
 };
 
 function index (req, res) {
@@ -22,4 +26,8 @@ function show (req, res) {
     todo: Todo.getOne(req.params.id),
     todoNum: parseInt(req.params.id) + 1
   });
+};
+
+function newTarea(req, res) {
+  res.render('todos/new');
 };

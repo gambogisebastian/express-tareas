@@ -10,6 +10,7 @@
 <body>
     <h1>Tareas al momento: <%= tiempo %></h1>
     <ul>
+        
         <% todos.forEach(function(t, idx) { %>
             <li>
                 <a href="/todos/<%= idx %>"><%= t.todo %></a>
@@ -18,7 +19,8 @@
             </li>
         <% } ); %>
 
+        <li><a href="/todos/new">Agregar una tarea</a></li>
     </ul>
-    <a href="/tareas/new">Agregar una tarea</a>
+    
 </body>
 </html>
