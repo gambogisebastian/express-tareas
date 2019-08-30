@@ -2,7 +2,12 @@ var Todo = require('../models/todo');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newTarea
+};
+
+function newTarea(req, res) {
+  res.render('todos/new');
 };
 
 function index (req, res) {
