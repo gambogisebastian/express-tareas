@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+.form-borrar {
+  display: inline-block;
+  margin-right: 10px
+}
+
+.form-borrar button {
+  color: red
+}
+
+li {
+  list-style: none;
+}

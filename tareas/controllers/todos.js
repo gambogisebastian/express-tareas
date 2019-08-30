@@ -4,14 +4,8 @@ module.exports = {
     index,
     show,
     new: newTarea,
-    create
-};
-
-function create (req, res) {
-  console.log(req.body);
-  req.body.done = false;
-  Todo.create(req.body);
-  res.redirect('/todos');
+    create,
+    delete: deleteTarea
 };
 
 function index (req, res) {
@@ -30,4 +24,16 @@ function show (req, res) {
 
 function newTarea(req, res) {
   res.render('todos/new');
+};
+
+function create (req, res) {
+  console.log(req.body);
+  req.body.done = false;
+  Todo.create(req.body);
+  res.redirect('/todos');
+};
+
+function deleteTarea (req, res) {
+  Todo.deleteOne(req.params.id);
+  res.redirect('/todos');
 };

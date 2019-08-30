@@ -7,11 +7,8 @@ const todos = [
 module.exports = {
     getAll,
     getOne,
-    create
-};
-
-function create (todo) {
-    todos.push(todo);
+    create,
+    deleteOne
 };
 
 function getAll() {
@@ -20,4 +17,12 @@ function getAll() {
 
 function getOne(id) {
     return todos[id];
+};
+
+function create (todo) {
+    todos.push(todo);
+};
+
+function deleteOne (id) {
+    todos.splice(id, 1);
 };

@@ -13,6 +13,9 @@
         
         <% todos.forEach(function(t, idx) { %>
             <li>
+                <form action="/todos/<%= idx %>?_method=DELETE" method="POST" class="form-borrar">
+                    <button type="submit">X</button>
+                </form>
                 <a href="/todos/<%= idx %>"><%= t.todo %></a>
                 -
                 <%= t.done ? 'hecho' : 'pendiente' %>
