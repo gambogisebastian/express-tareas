@@ -49,6 +49,7 @@ function edit (req, res) {
 };
 
 function update (req, res) {
+  req.body.done = !!req.body.done; // arregla lo que manda el form html cunado no está chequeado el cheqbox
   //console.log(req.params.id, req.body);
   Todo.update(req.params.id, req.body);
   res.redirect('/todos'); //no me anda el interpolador ${} ver como unir el url
