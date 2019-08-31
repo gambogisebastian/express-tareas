@@ -49,6 +49,7 @@ function edit (req, res) {
 };
 
 function update (req, res) {
+  //console.log(req.params.id, req.body);
   Todo.update(req.params.id, req.body);
-  res.redirect('todos/index');
-}
+  res.redirect('/todos'); //no me anda el interpolador ${} ver como unir el url
+};
